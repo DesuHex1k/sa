@@ -69,13 +69,11 @@ bot.on('message', async (msg) => {
     if(text !== 'Сделать заказ' && text !== 'О нас' && text !== 'Правила' && text !== '/start') {
         // console.log(text)
 
-        var ord = text
+        const db = new order({order: text})
+        db.save()
+
+        console.log(db)
 
     }
-
-    console.log(ord)
-    
-    const db = new order({order: ord})
-    db.save()
     
 });
