@@ -1,5 +1,10 @@
 const TelegramBot = require('node-telegram-bot-api');
 
+const mongoose = require('mongoose');
+
+const Schema = require('../server/order');
+const order = require('../server/order');
+
 const token = '5443133311:AAFITUw2t1zDLAS2M4jlPrFVUnJU3dalihU';
 
 const bot = new TelegramBot(token, {polling: true});
@@ -7,6 +12,13 @@ const bot = new TelegramBot(token, {polling: true});
 const weburl = 'https://numerous-decontamin.000webhostapp.com/';
 
 const tgsup = '@Desu_Sasha';
+
+const db = 'mongodb+srv://root:root@cluster0.wamgula.mongodb.net/?retryWrites=true&w=majority'
+
+mongoose
+    .connect(db)
+    .then((res) => console.log('OK'))
+    .catch((err) => console.log(err))
 
 bot.onText(/\/echo (.+)/, (msg, match) => {
 
@@ -55,7 +67,15 @@ bot.on('message', async (msg) => {
     }
 
     if(text !== 'Сделать заказ' && text !== 'О нас' && text !== 'Правила' && text !== '/start') {
-        console.log(text)
+        // console.log(text)
+
+        var ord = text
+
     }
+
+    console.log(ord)
+    
+    const db = new order({order: ord})
+    db.save()
     
 });
