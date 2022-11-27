@@ -11,7 +11,7 @@ const bot = new TelegramBot(token, {polling: true});
 
 const weburl = 'https://numerous-decontamin.000webhostapp.com/';
 
-const tgsup = '@Desu_Sasha';
+const tgsup = 'Username';
 
 const db = 'mongodb+srv://root:root@cluster0.wamgula.mongodb.net/?retryWrites=true&w=majority'
 
