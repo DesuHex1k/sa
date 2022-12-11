@@ -9,7 +9,7 @@ const token = '5947288814:AAFysHaIBrSpNf_ZvBMG0kEymWSeFrYMU5k';
 
 const bot = new TelegramBot(token, {polling: true});
 
-const weburl = 'https://numerous-decontamin.000webhostapp.com/';
+const weburl = 'https://video-card-62iv5w119-desuhex1k.vercel.app/';
 
 const tgsup = 'Username';
 
